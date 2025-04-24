@@ -4,7 +4,7 @@ const HEYGEN_API_BASE_URL = process.env.HEYGEN_BASE_API_URL;
 
 /**
  * Function to get the access token for the avatar
- * Path - /api/v1/get_access_id/:access_token
+ * Path - /api/v1/get_access_token/:access_token
  */
 async function getAccessId(req, res){
     try {
