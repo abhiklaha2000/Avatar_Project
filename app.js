@@ -13,6 +13,14 @@ app.get("/api/test", (req, res) => {
 });
 
 
+app.get("/", (req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    res.send("<h2>Hello from the avatar</h2>");
+});
+
+
+
+
 // Middleware to parse JSON
 app.use(express.json());
 // for Vote Routes
