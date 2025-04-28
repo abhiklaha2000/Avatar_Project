@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 const port = process.env.Port || 4000;
-const avatar_router = require('./routes/avatar.Route');
+const avatar_router = require('./routes/Avatar.Route');
 
 // Allow all origins (for development)
 app.use(cors());
