@@ -23,7 +23,8 @@ async function getAccessId(req, res){
 
         res.json({ 
             message: "Access token has been fetched successfully",
-            data: {token : data?.data?.token}
+            data: {token : data?.data?.token},
+            sucess: true
         });
       } catch (error) {
         res.status(500).json({ message: 'Error fetching data', error: error.message });
