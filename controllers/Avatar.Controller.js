@@ -12,19 +12,22 @@ async function getAccessId(req, res){
         if(!access_token){
             throw new Error("Access token is required")
         }
-        // Fetch the access token from the heygen api
+        // split the access token to extract the actual token 
+        const extracted_token = access_token.split("AB")[1];
+       // Fetch the access token from the heygen api
         const response = await fetch(`${HEYGEN_API_BASE_URL}/v1/streaming.create_token`, {
             method: "POST",
             headers: {
-              "x-api-key": access_token,
+              "x-api-key": extracted_token,
             },
           });
           const data = await response.json();
 
         res.json({ 
+            success: true,
             message: "Access token has been fetched successfully",
             data: {token : data?.data?.token},
-            success: true
+            
         });
       } catch (error) {
         res.status(500).json({ message: 'Error fetching data', error: error.message });
